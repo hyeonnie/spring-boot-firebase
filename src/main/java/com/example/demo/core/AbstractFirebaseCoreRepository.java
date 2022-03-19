@@ -73,7 +73,7 @@ public abstract class AbstractFirebaseCoreRepository<T> {
 	}
 	
 	public T select(final Class<T> clazz, final String collection, final String document) {
-		DocumentSnapshot documentSnapshot = getDocumentSnapshot(collection, document);
+		final DocumentSnapshot documentSnapshot = getDocumentSnapshot(collection, document);
 		return documentSnapshot.exists()
 				? documentSnapshot.toObject(clazz)
 				: null;
